@@ -12,16 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const routes_1 = __importDefault(require("./routes"));
-const path_1 = __importDefault(require("path"));
-const app = (0, express_1.default)();
-const port = 3000;
-app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-app.use('/api', routes_1.default);
-app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send('main route');
-}));
-app.listen(port, () => {
-    console.log(`working on https://localhost:${port}`);
+const sharp_1 = __importDefault(require("sharp"));
+const processImage = (image, width, height, output) => __awaiter(void 0, void 0, void 0, function* () {
+    const sharpie = yield (0, sharp_1.default)(image)
+        .resize(width, height)
+        .toFile(output);
+    return;
 });
+exports.default = processImage;
