@@ -19,11 +19,11 @@ const imageProcessing_1 = __importDefault(require("../../utilities/imageProcessi
 const images = express_1.default.Router();
 images.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const imageName = req.query.image;
-    const image = path_1.default.join(__dirname, '../', '../', 'public', 'input', imageName + ".jpg");
+    const image = path_1.default.join(__dirname, '../', '../', 'public', 'input', imageName + '.jpg');
     const width = parseInt(req.query.width);
     const height = parseInt(req.query.height);
-    const outputName = imageName + "-" + width + "x" + height;
-    const output = path_1.default.join(__dirname, '../', '../', 'public', 'output', outputName + ".jpg");
+    const outputName = imageName + '-' + width + 'x' + height;
+    const output = path_1.default.join(__dirname, '../', '../', 'public', 'output', outputName + '.jpg');
     if (fs_1.default.existsSync(output)) {
         console.log('From cache');
     }
