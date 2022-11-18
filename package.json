@@ -23,6 +23,7 @@
   "homepage": "https://github.com/michaelazer/image-processing-api#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "jasmine": "^4.5.0",
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.20",

@@ -13,21 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const imageProcessing_1 = __importDefault(require("../helpers/imageProcessing"));
-const path_1 = __importDefault(require("path"));
+const images_1 = __importDefault(require("./api/images"));
 const routes = express_1.default.Router();
 routes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const imageName = req.query.image;
-    const image = path_1.default.join(__dirname, '../', 'public', 'input', imageName + ".jpg");
-    const width = parseInt(req.query.width);
-    const height = parseInt(req.query.height);
-    const outputName = imageName + "-" + width + "x" + height;
-    const output = path_1.default.join(__dirname, '../', 'public', 'output', outputName + ".jpg");
-    yield (0, imageProcessing_1.default)(image, width, height, output);
-    res.send(`
-            <h1>${imageName}</h1><br> \
-            <h2>${width}x${height}</h2><br> \
-            <img src="./output/${outputName}.jpg" alt="Output image"> \
-            `);
+    res.send('main api');
 }));
+routes.use('/images', images_1.default);
 exports.default = routes;
