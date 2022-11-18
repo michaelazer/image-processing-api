@@ -16,7 +16,9 @@ const express_1 = __importDefault(require("express"));
 const images_1 = __importDefault(require("./api/images"));
 const routes = express_1.default.Router();
 routes.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send('main api');
+    res.send(`
+        
+    `);
 }));
 routes.use('/images', images_1.default);
 exports.default = routes;

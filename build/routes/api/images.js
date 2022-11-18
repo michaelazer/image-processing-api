@@ -25,10 +25,10 @@ images.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const outputName = imageName + "-" + width + "x" + height;
     const output = path_1.default.join(__dirname, '../', '../', 'public', 'output', outputName + ".jpg");
     if (fs_1.default.existsSync(output)) {
-        console.log('from cache');
+        console.log('From cache');
     }
     else {
-        console.log('running process');
+        console.log('Running process');
         yield (0, imageProcessing_1.default)(image, width, height, output);
     }
     res.send(`
