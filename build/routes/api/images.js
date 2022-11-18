@@ -22,7 +22,7 @@ images.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const image = path_1.default.join(__dirname, '../', '../', 'public', 'input', imageName + '.jpg');
     const width = parseInt(req.query.width);
     const height = parseInt(req.query.height);
-    const outputName = imageName + '-' + width + 'x' + height;
+    const outputName = imageName + '-' + width.toString() + 'x' + height.toString();
     const output = path_1.default.join(__dirname, '../', '../', 'public', 'output', outputName + '.jpg');
     if (fs_1.default.existsSync(output)) {
         console.log('From cache');

@@ -4,7 +4,7 @@
   "description": "An API that returns an image based on the image and dimensions entered.",
   "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon /build/index.js",
+    "start": "node build/",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "jasmine": "jasmine",
