@@ -22,6 +22,14 @@ This project simply resizes an image to any dimensions given in the url.
 
 ## Running Commands
 
+#### Installing Dependencies
+
+Before running the program, you should install npm libraries
+
+```bash
+  npm install
+```
+
 #### Running Tests
 
 The test script runs both jasmine tests, then builds.
