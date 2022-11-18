@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const imageProcessing_1 = __importDefault(require("../../helpers/imageProcessing"));
+const imageProcessing_1 = __importDefault(require("../../utilities/imageProcessing"));
 const images = express_1.default.Router();
 images.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const imageName = req.query.image;

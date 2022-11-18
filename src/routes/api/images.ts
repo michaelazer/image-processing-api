@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'fs'
 import path from 'path'
-import processImage from '../../helpers/imageProcessing'
+import processImage from '../../utilities/imageProcessing'
 
 const images = express.Router()
 

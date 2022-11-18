@@ -1,6 +1,5 @@
 import express from 'express'
 import routes from './routes'
-import processImage from './helpers/imageProcessing'
 import path from 'path'
 
 const app = express()
