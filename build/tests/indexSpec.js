@@ -37,11 +37,14 @@ describe('testing Jasmine', () => {
         expect(a).toBe(1);
     });
 });
-describe('Image processing working properly', () => __awaiter(void 0, void 0, void 0, function* () {
-    it('should create a file', () => __awaiter(void 0, void 0, void 0, function* () {
-        yield (0, imageProcessing_1.default)(image, width, height, output);
-        expect(fs_1.default.existsSync(output)).toBe(true);
-    }));
+describe('Image processing working properly', () => {
+    it('should create a file', () => {
+        (0, imageProcessing_1.default)(image, width, height, output)
+            .then(() => {
+            expect(fs_1.default.existsSync(output)).toBe(true);
+        })
+            .catch((err) => console.error(err));
+    });
     it('should change file width', () => __awaiter(void 0, void 0, void 0, function* () {
         const metadata = yield (0, sharp_1.default)(output).metadata();
         expect(metadata.width).toBe(width);
@@ -50,4 +53,4 @@ describe('Image processing working properly', () => __awaiter(void 0, void 0, vo
         const metadata = yield (0, sharp_1.default)(output).metadata();
         expect(metadata.height).toBe(height);
     }));
-}));
+});

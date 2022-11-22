@@ -27,32 +27,37 @@ const output: string = path.join(
 )
 
 const request = supertest(app)
-describe('Test endpoint responses', () => {
-  it('gets the api endpoint', async () => {
+describe('Test endpoint responses', (): void => {
+  it('gets the api endpoint', async (): Promise<void> => {
     const response = await request.get('/')
     expect(response.status).toBe(200)
   })
 })
 
-describe('testing Jasmine', () => {
-  it('should show that Jasmine is working', () => {
+describe('testing Jasmine', (): void => {
+  it('should show that Jasmine is working', (): void => {
     const a = 1
     expect(a).toBe(1)
   })
 })
 
-describe('Image processing working properly', async (): Promise<void> => {
-  it('should create a file', async () => {
-    await processImage(image, width, height, output)
-    expect(fs.existsSync(output)).toBe(true)
+describe('Image processing working properly', (): void => {
+  it('should create a file', (): void => {
+    processImage(image, width, height, output)
+      .then(() => {
+        expect(fs.existsSync(output)).toBe(true)
+      })
+      .catch((err) =>
+        console.error(err)
+      )
   })
 
-  it('should change file width', async () => {
+  it('should change file width', async (): Promise<void> => {
     const metadata = await sharp(output).metadata()
     expect(metadata.width).toBe(width)
   })
 
-  it('should change file height', async () => {
+  it('should change file height', async (): Promise<void> => {
     const metadata = await sharp(output).metadata()
     expect(metadata.height).toBe(height)
   })

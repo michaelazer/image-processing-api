@@ -5,7 +5,8 @@ const processImage = async (
   width: number,
   height: number,
   output: string
-): Promise<void> => {
-  await sharp(image).resize(width, height).toFile(output)
+): Promise<sharp.OutputInfo> => {
+  const sharpOutput: sharp.OutputInfo = await sharp(image).resize(width, height).toFile(output)
+  return sharpOutput
 }
 export default processImage
