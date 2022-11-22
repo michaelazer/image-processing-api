@@ -61,7 +61,7 @@ To run the program, run the following command
 Once the program is running you can enter your paramters in the url as follows:
 
 ```
-http://localhost:3000/api/images/image=test&width=300&height=300
+http://localhost:3000/api/images?image=test&width=300&height=300
 ```
 
 For testing purposes, there is a test image called "test" which you can use.

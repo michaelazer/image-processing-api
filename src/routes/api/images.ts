@@ -5,8 +5,8 @@ import processImage from '../../utilities/imageProcessing'
 
 const images = express.Router()
 
-images.get('/', async (req, res) => {
-  const imageName = req.query.image as string
+images.get('/', async (req: express.Request, res: express.Response) => {
+  const imageName: string = req.query.image as string
   const image: string = path.join(
     __dirname,
     '../',
@@ -35,14 +35,8 @@ images.get('/', async (req, res) => {
     console.log('Running process')
     await processImage(image, width, height, output)
   }
-
-  res.send(
-    `
-            <h1>${imageName}</h1><br> \
-            <h2>${width}x${height}</h2><br> \
-            <img src="../output/${outputName}.jpg" alt="Output image"> \
-            `
-  )
+  console.log(output)
+  res.sendFile(`${output}`)
 })
 
 export default images

@@ -31,10 +31,7 @@ images.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         console.log('Running process');
         yield (0, imageProcessing_1.default)(image, width, height, output);
     }
-    res.send(`
-            <h1>${imageName}</h1><br> \
-            <h2>${width}x${height}</h2><br> \
-            <img src="../output/${outputName}.jpg" alt="Output image"> \
-            `);
+    console.log(output);
+    res.sendFile(`${output}`);
 }));
 exports.default = images;

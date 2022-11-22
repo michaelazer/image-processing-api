@@ -8,11 +8,11 @@ const port = 3000
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api', routes)
 
-app.get('/', (req, res) => {
+app.get('/', (req: express.Request, res: express.Response): void => {
   res.send('main route')
 })
 
-app.listen(port, () => {
+app.listen(port, (): void => {
   console.log(`working on https://localhost:${port}`)
 })
 

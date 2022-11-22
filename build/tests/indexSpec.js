@@ -25,13 +25,12 @@ const height = 500;
 const outputName = imageName + '-' + width.toString() + 'x' + height.toString();
 const output = path_1.default.join(__dirname, '../', 'public', 'output', outputName + '.jpg');
 const request = (0, supertest_1.default)(index_1.default);
-// describe('Test endpoint responses', () => {
-//   it('gets the api endpoint', async (done) => {
-//     const response = await request.get('/')
-//     expect(response.status).toBe(200)
-//     done()
-//   })
-// })
+describe('Test endpoint responses', () => {
+    it('gets the api endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/');
+        expect(response.status).toBe(200);
+    }));
+});
 describe('testing Jasmine', () => {
     it('should show that Jasmine is working', () => {
         const a = 1;
